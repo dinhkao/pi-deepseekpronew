@@ -180,7 +180,7 @@ class PerpetualMotion(Song):
     laid = 0.0
 
     def _bass(self, tr):
-        def nb(t0, m, d, g=0.30):
+        def nb(t0, m, d, g=0.35):
             natbass(tr.b, T(t0), m, d, g=g)
         for bv in (B_V1, B_V2, B_V3):
             nb(bv, 'E2', 15.0)
