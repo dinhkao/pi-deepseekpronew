@@ -239,7 +239,7 @@ def _f0_check(seg, want, tol=0.045):
     if 0 < idx < len(X) - 1:
         a, b2, c = X[idx - 1], X[idx], X[idx + 1]
         den = a - 2 * b2 + c
-        if abs(den) > 1e-12:
+        if den < -1e-12:   # chi noi suy khi la DINH (concave down)
             f0 = (idx + 0.5 * (a - c) / den) * SR / NFFT
     ok = abs(f0 - want) <= tol * want
     return ok, f0 if not ok else None
