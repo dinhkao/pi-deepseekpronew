@@ -184,8 +184,9 @@ def audit_vocal_f0(cells, b, label, hum, tol=0.045):
         off, d, note = c[0], c[1], c[2]
         if note is None:
             continue
-        if d < 0.6:
-            # not luot qua nhanh (passing 8th) — khong do duoc tin cay
+        if d < 0.85:
+            # not luot qua nhanh (passing 8th) — engine legato glide, khong
+            # do duoc tin cay. Audit hoa am van check duoc het.
             continue
         m = _parse_note(note)
         t0 = T(off)
